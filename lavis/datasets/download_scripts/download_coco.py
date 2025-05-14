@@ -108,9 +108,9 @@ from lavis.common.utils import (
 
 # URLs của COCO dataset
 DATA_URL = {
+    "test": "http://images.cocodataset.org/zips/test2014.zip",
     "train": "http://images.cocodataset.org/zips/train2014.zip",
     "val": "http://images.cocodataset.org/zips/val2014.zip",
-    "test": "http://images.cocodataset.org/zips/test2014.zip",
     "test2015": "http://images.cocodataset.org/zips/test2015.zip",
 }
 
