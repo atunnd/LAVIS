@@ -160,8 +160,10 @@ class BaseDatasetBuilder:
     def _download_vis(self):
 
         storage_path = self.config.build_info.get(self.data_type).storage
-        storage_path = utils.get_cache_path(storage_path)
+        #storage_path = utils.get_cache_path(storage_path)
 
+        print("\n=>>>>>>>> ", storage_path)
+        print("\npath exist: ", os.path.exists(storage_path))
         if not os.path.exists(storage_path):
             warnings.warn(
                 f"""
@@ -170,6 +172,7 @@ class BaseDatasetBuilder:
                 refer to datasets/download_scripts/README.md for downloading instructions.
                 """
             )
+            print("oh shit!!")
 
     def build(self):
         """
@@ -217,14 +220,14 @@ class BaseDatasetBuilder:
 
             # visual data storage path
             vis_path = vis_info.storage
+            # print("\n =>>> vis path: ", vis_path)
+            # if not os.path.isabs(vis_path):
+            #     # vis_path = os.path.join(utils.get_cache_path(), vis_path)
+            #     vis_path = utils.get_cache_path(vis_path)
 
-            if not os.path.isabs(vis_path):
-                # vis_path = os.path.join(utils.get_cache_path(), vis_path)
-                vis_path = utils.get_cache_path(vis_path)
-
-            if not os.path.exists(vis_path):
-                warnings.warn("storage path {} does not exist.".format(vis_path))
-
+            # if not os.path.exists(vis_path):
+            #     warnings.warn("storage path {} does not exist.".format(vis_path))
+            print("\n =====>>> vis path: ", vis_path)
             # create datasets
             dataset_cls = self.train_dataset_cls if is_train else self.eval_dataset_cls
             datasets[split] = dataset_cls(
