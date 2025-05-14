@@ -134,6 +134,7 @@ class BaseDatasetBuilder:
 
                 dirname = os.path.dirname(storage_path)
                 if not os.path.exists(dirname):
+                    print(f"\nCreate dir_name: {dirname} \n")
                     os.umask(0)
                     os.makedirs(dirname, mode=0o777)
 
