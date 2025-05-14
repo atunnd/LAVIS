@@ -1,1 +1,1 @@
-python  train.py --cfg-path lavis/projects/blip2/train/pretrain_stage1.yaml --output-dir ./checkpoints/blip2
+python  train.py --cfg-path lavis/projects/blip2/train/pretrain_stage1.yaml 
